@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SigMale Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-bar">
+            <a href="homePage_preLogin.html" class="logo">SigMale Academy</a>
+            <nav>
+                <a href="#">Courses</a>
+                <a href="#">Forums</a>
+                <a href="homePage_login.html">Register/Login</a>
+            </nav>
+        </div>
+        <div class="hero">
+            <h1>What is SigMale Academy?</h1>
+        </div>
+    </header>
+
+    <main>
+        <h1>Sign up to SigMale Academy</h1>
+        <form id="registrationForm" action="homePage_login.html"> 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Re-enter Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <label for="securityQuestion">Security Question:</label>
+            <select id="securityQuestion" name="securityQuestion" required>
+                <option value="motherMaidenName">What's your mother's maiden name?</option>
+                <option value="firstCarMake">What's your first car's make?</option>
+                <option value="hometown">What's your hometown?</option>
+            </select>
+
+            <label for="securityAnswer">Answer:</label>
+            <input type="text" id="securityAnswer" name="securityAnswer" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 SigMale Academy</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

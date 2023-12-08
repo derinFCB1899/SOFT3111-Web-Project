@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigMale Account Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <a href="homePage_preLogin.html" class="logo" src=>SigMale Academy</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#">Courses</a>
+                <a href="#">Forums</a>
+                <a href="homePage_login.html">Register/Login</a>
+            </nav>
+        </div>
+    </header>
+    <main class="login-container">
+        <h1>SigMale Account Login</h1>
+        <form id="loginForm" action="homePage_postLogin.html">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="email" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <a href="forgotpassword.html" class="forgot-password">Forgot password?</a>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+            <div class="form-group">
+                <a href="registration.html" class="create-account">Create an account</a>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 SigMale Academy</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
