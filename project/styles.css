@@ -350,7 +350,21 @@ input[type="password"] {
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
-/* Isa css */
+.progress-bar-container {
+    width: 100%;
+    background-color: #eee;
+  }
+  
+  .progress-bar {
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+  }
+
+  /* Isa css */
 .avatar {
     box-sizing: content-box;
     border: solid medium #000000;
