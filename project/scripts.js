@@ -130,4 +130,49 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = "none";
         }
     }
+
+    // Function for handling the quiz submission
+    function handleQuizSubmission() {
+        var confirmationModal = document.getElementById('confirmationModal');
+        var quizForm = document.getElementById('quizForm');
+        
+        if (quizForm) {
+            quizForm.onsubmit = function(event) {
+                event.preventDefault();
+                confirmationModal.style.display = 'block';
+            };
+        }
+        
+        var confirmSubmit = document.getElementById('confirmSubmit');
+        var cancelSubmit = document.getElementById('cancelSubmit');
+        var spanClose = document.getElementsByClassName('close')[0];
+        
+        if (confirmSubmit) {
+            confirmSubmit.onclick = function() {
+                confirmationModal.style.display = 'none';
+                // Add your logic for when the quiz is confirmed
+                // For example, marking the correct answers and displaying the success message
+                console.log('Quiz submitted.');
+            };
+        }
+        
+        if (cancelSubmit) {
+            cancelSubmit.onclick = function() {
+                confirmationModal.style.display = 'none';
+            };
+        }
+        
+        if (spanClose) {
+            spanClose.onclick = function() {
+                confirmationModal.style.display = 'none';
+            };
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == confirmationModal) {
+                confirmationModal.style.display = 'none';
+            }
+        };
+    }
+
     });
