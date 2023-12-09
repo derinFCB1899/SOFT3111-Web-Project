@@ -46,6 +46,48 @@
             <!-- Images and stories would go here -->
         </section>
 
+        <section class="quiz-section">
+            <h2>Quiz Assessment</h2>
+            <form id="quizForm">
+                <!-- Quiz questions will go here -->
+                <!-- Q1 -->
+                <p>1) What is a common trait found in many success stories?</p>
+                <label><input type="radio" name="question1" value="false"> Procrastination</label><br>
+                <label><input type="radio" name="question1" value="false"> Resilience</label><br>
+                <label><input type="radio" name="question1" value="true"> Lack of planning</label><br>
+                <label><input type="radio" name="question1" value="false"> Avoidance of risk</label><br>
+                <!-- Q2 -->
+                <p>2) Which ofthe following is important for personal growth?</p>
+                <label><input type="radio" name="question2" value="true"> Setting clear, achievable goals</label><br>
+                <label><input type="radio" name="question2" value="false"> Never asking for help</label><br>
+                <label><input type="radio" name="question2" value="false"> Sticking to what you know</label><br>
+                <label><input type="radio" name="question2" value="false"> Avoiding challenges</label><br>
+                <!-- Q3 -->
+                <p>3)  How does refecting on your past achievements help with personal growth?</p>
+                <label><input type="radio" name="question3" value="false"> It prevents you from moving forward</label><br>
+                <label><input type="radio" name="question3" value="true"> It can provide motivation and a sense of accomplishment</label><br>
+                <label><input type="radio" name="question3" value="false"> It is a waste of time</label><br>
+                <label><input type="radio" name="question3" value="false"> It is not recommended by experts</label><br>
+                <!-- Q4 -->
+                <p>4) When mapping out a journey of achievement, what is the frst step you should take?</p>
+                <label><input type="radio" name="question4" value="falsen"> Wait for the perfect moment to start</label><br>
+                <label><input type="radio" name="question4" value="false"> Compare your journey to others</label><br>
+                <label><input type="radio" name="question4" value="false"> Focus solely on the end goal</label><br>
+                <label><input type="radio" name="question4" value="true"> Identify your strengths and weaknesses</label><br>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Modal for confirmation -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Are you sure you'd like to complete the assessment?</p>
+                <button id="confirmSubmit">Yes</button>
+                <button id="cancelSubmit">No</button>
+            </div>
+        </div>
+
         <aside class="notes-section">
             <textarea placeholder="Take your notes here"></textarea>
         </aside>

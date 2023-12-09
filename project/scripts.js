@@ -73,14 +73,55 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     });
 
-    function login() {
+    // Shared logout function
+    function logout() {
         console.log('Login form submitted.'); // Log to console for debugging
         alert('Login successful!'); // Display an alert message to the user
         window.location.href = 'homePage_postLogin.html';
     }
 
-    function logout() {
-        console.log('Login form submitted.'); // Log to console for debugging
-        alert('Stay SIGMA!'); // Display an alert message to the user
-        window.location.href = 'homePage_postLogin.html';
+    // JavaScript for quiz submission and modal
+    document.addEventListener('DOMContentLoaded', function () {
+    // Get the modal
+    var modal = document.getElementById("confirmationModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("quizForm");
+
+    // Get the element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    if (btn) {
+        btn.addEventListener('submit', function(event) {
+            event.preventDefault();
+            modal.style.display = "block";
+        });
     }
+
+    // When the user clicks on <span> (x), close the modal
+    if (span) {
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
+    // When the user clicks on "Yes", close the modal and show alert
+    document.getElementById('confirmSubmit').onclick = function() {
+        modal.style.display = "none";
+        alert('Your responses have been submitted.');
+        // Here you would typically handle the submission, like sending it to a server
+    };
+
+    // When the user clicks on "No", close the modal
+    document.getElementById('cancelSubmit').onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    });
