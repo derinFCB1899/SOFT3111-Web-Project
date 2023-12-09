@@ -364,12 +364,13 @@ input[type="password"] {
     color: white;
   }
 
-  /* Isa css */
+/* Isa css */
 .avatar {
     box-sizing: content-box;
     border: solid medium #000000;
     box-sizing: content-box;
     width: 250px;
+    height: auto;
     margin: 4px 2px;
 }
 
@@ -378,7 +379,7 @@ input[type="password"] {
     border: solid medium #000000;
     box-sizing: content-box;
     width: 300px;
-    height: 80px;
+    height: auto;
     padding: 5px;
     margin: 4px 2px;
 }
@@ -393,5 +394,41 @@ input[type="password"] {
     background-color: red;
     border-color: #000000;
     color: #fff;
+}
+
+.advertisements{
+    position: fixed;
+    right: 0px;
+    top: 50px;
+}
+
+.ad-one {
+    box-sizing: content-box;
+    border: solid medium #000000;
+    box-sizing: content-box;
+    width: 450px;
+    height: auto;
+    padding: 5px;
+    margin: 4px 2px;
+}
+
+.ad-two {
+    box-sizing: content-box;
+    border: solid medium #000000;
+    box-sizing: content-box;
+    width: 450px;
+    height: auto;
+    padding: 5px;
+    margin: 4px 2px;
+}
+
+.ad-three {
+    box-sizing: content-box;
+    border: solid medium #000000;
+    box-sizing: content-box;
+    width: 450px;
+    height: auto;
+    padding: 5px;
+    margin: 4px 2px;
 }
 /* Isa css end*/
