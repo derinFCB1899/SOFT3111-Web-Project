@@ -131,48 +131,104 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Function for handling the quiz submission
+    // Function for handling the quiz submission and displaying the confirmation modal
     function handleQuizSubmission() {
-        var confirmationModal = document.getElementById('confirmationModal');
         var quizForm = document.getElementById('quizForm');
-        
-        if (quizForm) {
-            quizForm.onsubmit = function(event) {
-                event.preventDefault();
-                confirmationModal.style.display = 'block';
-            };
-        }
-        
-        var confirmSubmit = document.getElementById('confirmSubmit');
-        var cancelSubmit = document.getElementById('cancelSubmit');
-        var spanClose = document.getElementsByClassName('close')[0];
-        
-        if (confirmSubmit) {
-            confirmSubmit.onclick = function() {
-                confirmationModal.style.display = 'none';
-                // Add your logic for when the quiz is confirmed
-                // For example, marking the correct answers and displaying the success message
-                console.log('Quiz submitted.');
-            };
-        }
-        
-        if (cancelSubmit) {
-            cancelSubmit.onclick = function() {
-                confirmationModal.style.display = 'none';
-            };
-        }
-        
-        if (spanClose) {
-            spanClose.onclick = function() {
-                confirmationModal.style.display = 'none';
-            };
-        }
-        
-        window.onclick = function(event) {
+        var confirmationModal = document.getElementById('confirmationModal');
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            confirmationModal.style.display = 'block';
+        });
+
+        // Confirm submission within the modal
+        document.getElementById('confirmSubmit').addEventListener('click', function() {
+            disableForm(quizForm);
+            confirmationModal.style.display = 'none';
+            alert('Your responses have been submitted.');
+            showProgress();
+        });
+
+        // Cancel submission within the modal
+        document.getElementById('cancelSubmit').addEventListener('click', function() {
+            confirmationModal.style.display = 'none';
+        });
+
+        // Close modal when clicking on <span> (x)
+        document.getElementsByClassName('close')[0].addEventListener('click', function() {
+            confirmationModal.style.display = 'none';
+        });
+
+        // Close the modal when clicking outside of it
+        window.addEventListener('click', function(event) {
             if (event.target == confirmationModal) {
                 confirmationModal.style.display = 'none';
             }
-        };
+        });
     }
 
+    // Call the quiz submission handler
+    handleQuizSubmission();
+
+    // Function to disable quiz form
+    function disableForm(form) {
+        var inputs = form.getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].disabled = true;
+        }
+    }
+
+    // Function to show progress after quiz submission
+    function showProgress() {
+        // Dummy progress bar logic
+        var progressBar = document.getElementById('progressBar');
+        progressBar.style.width = '100%'; // Example of setting progress to 100%
+        progressBar.style.display = 'block';
+    }
+
+    var modal = document.getElementById("confirmationModal");
+  var btn = document.getElementById("quizForm");
+  var span = document.getElementsByClassName("close")[0];
+
+  if (btn) {
+    btn.addEventListener('submit', function(event) {
+      event.preventDefault();
+      modal.style.display = "block";
     });
+  }
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  document.getElementById('confirmSubmit').onclick = function() {
+    modal.style.display = "none";
+    disableQuiz();
+    showProgress();
+  };
+
+  document.getElementById('cancelSubmit').onclick = function() {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  function disableQuiz() {
+    var quizInputs = document.querySelectorAll('#quizForm input');
+    quizInputs.forEach(function(input) {
+      input.disabled = true;
+    });
+  }
+
+  function showProgress() {
+    var progressBarContainer = document.getElementById('progressBarContainer');
+    var progressBar = document.getElementById('progressBar');
+    progressBarContainer.style.display = 'block';
+    progressBar.style.width = '100%';
+    progressBar.textContent = '100% Complete';
+  }
+});
