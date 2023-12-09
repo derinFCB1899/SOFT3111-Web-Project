@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'homePage_postLogin.html';
     }
 
-    // JavaScript for quiz submission and modal
+   // JavaScript for quiz submission and modal
     document.addEventListener('DOMContentLoaded', function () {
     // Get the modal
     var modal = document.getElementById("confirmationModal");
@@ -170,65 +170,29 @@ document.addEventListener('DOMContentLoaded', function () {
     // Call the quiz submission handler
     handleQuizSubmission();
 
-    // Function to disable quiz form
-    function disableForm(form) {
-        var inputs = form.getElementsByTagName('input');
-        for (var i = 0; i < inputs.length; i++) {
-            inputs[i].disabled = true;
-        }
-    }
-
-    // Function to show progress after quiz submission
-    function showProgress() {
-        // Dummy progress bar logic
-        var progressBar = document.getElementById('progressBar');
-        progressBar.style.width = '100%'; // Example of setting progress to 100%
-        progressBar.style.display = 'block';
-    }
-
-    var modal = document.getElementById("confirmationModal");
-  var btn = document.getElementById("quizForm");
-  var span = document.getElementsByClassName("close")[0];
-
-  if (btn) {
-    btn.addEventListener('submit', function(event) {
-      event.preventDefault();
-      modal.style.display = "block";
-    });
-  }
-
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  document.getElementById('confirmSubmit').onclick = function() {
-    modal.style.display = "none";
-    disableQuiz();
-    showProgress();
-  };
-
-  document.getElementById('cancelSubmit').onclick = function() {
-    modal.style.display = "none";
-  };
-
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-
-  function disableQuiz() {
-    var quizInputs = document.querySelectorAll('#quizForm input');
-    quizInputs.forEach(function(input) {
-      input.disabled = true;
-    });
-  }
-
-  function showProgress() {
-    var progressBarContainer = document.getElementById('progressBarContainer');
-    var progressBar = document.getElementById('progressBar');
-    progressBarContainer.style.display = 'block';
-    progressBar.style.width = '100%';
-    progressBar.textContent = '100% Complete';
-  }
-});
+     // Get the quiz form and the overlay elements
+     var quizForm = document.getElementById('quizForm');
+     var quizOverlay = document.getElementById('quizOverlay');
+     var progressBar = document.getElementById('progressBar');
+     var successMessage = document.getElementById('successMessage');
+ 
+     // Listen for the quiz form submission
+     quizForm.addEventListener('submit', function(event) {
+         event.preventDefault(); // Prevent actual form submission
+ 
+         // Show the overlay
+         quizOverlay.style.display = 'flex';
+ 
+         // Disable the form inputs
+         var inputs = quizForm.getElementsByTagName('input');
+         for (var i = 0; i < inputs.length; i++) {
+             inputs[i].disabled = true;
+         }
+ 
+         // Update the progress bar
+         progressBar.style.width = '100%';
+ 
+         // Optionally, scroll the user to the top of the quiz section
+         quizForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+     });
+ });
