@@ -16,12 +16,51 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    position: sticky; /* Add this line */
-    top: 0; /* And this line */
-    z-index: 1000; /* Ensure the navbar stays on top of other content */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1em;
+}
+
+.nav-bar .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-bar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.nav-bar .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-bar .dropdown-content a:hover {
+    background-color: #444;
+}
+
+.nav-bar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
     color: white;
     text-decoration: none;
     padding: 0 1em;
