@@ -78,9 +78,15 @@
                 <label><input type="radio" name="question4" value="true"> Identify your strengths and weaknesses</label><br>
                 <button type="submit">Submit</button>
             </form>
-            <div id="progressBarContainer" class="progress-bar-container" style="display:none;">
-                <div id="progressBar" class="progress-bar" style="width: 0%;">0%</div>
+            <<!-- Overlay container which will be displayed upon submission -->
+    <div id="quizOverlay" class="overlay" style="display:none;">
+        <div class="overlay-content">
+            <p id="successMessage">You have successfully completed this course</p>
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar">100%</div>
             </div>
+        </div>
+    </div>
         </section>
 
         <!-- Modal for confirmation -->
