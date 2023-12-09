@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function logout() {
         console.log('Login form submitted.'); // Log to console for debugging
         alert('Stay SIGMA!'); // Display an alert message to the user
-        window.location.href = 'homePage_postLogin.html';
+        window.location.href = 'homePage_preLogin.html';
     }
 
     // JavaScript for quiz submission and modal
