@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Profile - SigMale Academy</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="nav-bar">
+                <a href="#" class="logo">SigMale Academy</a>
+                <nav>
+                    <div class="dropdown">
+                        <button class="dropbtn" id="courseDropdown">Courses</button>
+                        <div class="dropdown-content" id="coursesDropdownContent">
+                            <!-- Introductory is available to all users by default -->
+                            <a href="#" id="introductoryCourse">Introductory</a>
+                            <!-- Advanced will be added via JavaScript for Sigma and Admin users -->
+                        </div>
+                    </div>
+                    <a href="#">Forums</a>
+                    <!-- Additional links for Sigma and Admin will be added dynamically via JavaScript -->
+                    <a href="profile.html" class="active">Profile</a>
+                    <a href="homePage_preLogin.html" onclick="logout()">Logout</a>
+                </nav>
+                <span id="userGreeting">Welcome, betauser!</span> <!-- Placeholder for the welcome message -->
+            </div>
+        </header>
+
+        <main>
+            <section class="profile-section">
+                <h1>betauser's Profile</h1>
+                <img src="assets/betauser.png" alt="Beta User Avatar" class="avatar">
+                <div class="user-details">
+                    <p>Email: iamaloserbetauser@hotmail.com</p>
+                    <p>Password: ***********</p><br>
+                    <p>Member since: 15.11.2023</p>
+                </div>
+                <div class="delete-user">
+                    <button class="delete-button" onclick="deleteUser()">Delete my account</button>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
