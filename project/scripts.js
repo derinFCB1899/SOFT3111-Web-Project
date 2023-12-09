@@ -74,9 +74,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Shared logout function
-    function logout() {
+    function login() {
         console.log('Login form submitted.'); // Log to console for debugging
         alert('Login successful!'); // Display an alert message to the user
+        window.location.href = 'homePage_postLogin.html';
+    }
+
+    function logout() {
+        console.log('Login form submitted.'); // Log to console for debugging
+        alert('Stay SIGMA!'); // Display an alert message to the user
         window.location.href = 'homePage_postLogin.html';
     }
 
