@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (navbar && userRole === 'adminuser') {
         // Add 'Management' link for Admin users
         var managementLink = document.createElement('a');
-        managementLink.href = '#';
+        managementLink.href = 'adminpanel.html';
         managementLink.textContent = 'Management';
         navbar.appendChild(managementLink);
     }
@@ -195,4 +195,17 @@ document.addEventListener('DOMContentLoaded', function () {
          // Optionally, scroll the user to the top of the quiz section
          quizForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
      });
+
+     function createCourse() {
+        // Assuming your form has an id of 'newContentForm'
+        const form = document.getElementById('newContentForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('New content submitted!');
+            // Here you would typically send form data to a server
+        });
+    }
+    
+    // Call this function when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', createCourse);
  });

@@ -450,3 +450,84 @@ input[type="password"] {
     margin: 4px 2px;
 }
 /* Isa css end*/
+
+/* Admin Panel Specific Styles */
+.admin-panel {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+.admin-panel > div {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px; /* Space between content blocks */
+}
+
+.existing-content,
+.add-content {
+    flex-basis: calc(50% - 10px); /* adjust width and subtract total margin space */
+    margin-bottom: 20px;
+}
+
+.existing-content ul,
+.add-content form {
+    margin-top: 10px;
+}
+
+.existing-content ul {
+    list-style-type: none;
+}
+
+.existing-content li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.add-content h2,
+.existing-content h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Styling form elements */
+.add-content form label,
+.add-content form input,
+.add-content form .choices,
+.add-content form button {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0; /* spacing between form items */
+}
+
+.add-content form .choices {
+    margin-left: 20px; /* indent choices */
+}
+
+.add-content form button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-content form button:hover {
+    background-color: #4cae4c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .admin-panel {
+        flex-direction: column;
+    }
+
+    .existing-content,
+    .add-content {
+        flex-basis: 100%;
+    }
+}
+

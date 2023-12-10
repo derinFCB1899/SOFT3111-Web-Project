@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - SigMale Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <a href="homePage_postLogin.html" class="logo">SigMale Academy</a>
+            <nav>
+                <div class="dropdown">
+                    <button class="dropbtn" id="courseDropdown">Courses</button>
+                    <div class="dropdown-content" id="coursesDropdownContent">
+                        <!-- Introductory is available to all users by default -->
+                        <a href="introductorycoursepage.html" id="introductoryCourse">Introductory</a>
+                        <a href="advancedcoursepage.html" id="advancedcoursepage">Advanced</a>
+                        <!-- Advanced will be added via JavaScript for Sigma and Admin users -->
+                    </div>
+                </div>
+                <a href="forum.html">Forums</a>
+                <a href="profile.page.html">Profile</a>
+                <!-- Additional links for Sigma and Admin will be added dynamically via JavaScript -->
+                <a href="homePage_preLogin.html" onclick="logout()">Logout</a>
+            </nav>
+            <span id="userGreeting"></span> <!-- Place for the welcome message -->
+        </div>
+        <div class="hero">
+            <h1>What is SigMale Academy?</h1>
+        </div>
+    </header>
+    <div class="admin-panel">
+        <!-- Existing Content Section -->
+        <div class="existing-content">
+            <h2>Existing Content</h2>
+            <ul id="contentList">
+                <!-- Content will be added here -->
+            </ul>
+        </div>
+        
+        <!-- Add New Content Section -->
+        <div class="add-content">
+            <h2>Add New Content</h2>
+            <form id="newContentForm">
+                <label for="contentName">Content Name:</label>
+                <input type="text" id="contentName" required>
+    
+                <label for="videoFile">Video File:</label>
+                <input type="file" id="videoFile" required>
+    
+                <label for="question">Question:</label>
+                <input type="text" id="question" required>
+                
+                <div class="choices">
+                    <!-- Choices for the question -->
+                </div>
+                
+                <button type="button" id="addQuestionBtn">Add Question</button>
+                
+                <label for="articleLink">Add article hyperlink:</label>
+                <input type="text" id="articleLink" required>
+                
+                <div>
+                    <label>Select the category of the content:</label><br>
+                    <input type="radio" name="contentCategory" value="Introductory"> Introductory
+                    <input type="radio" name="contentCategory" value="Advanced"> Advanced
+                </div>
+                
+                <button type="submit" id="createCourseBtn">Create Course</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 SigMale Academy</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
