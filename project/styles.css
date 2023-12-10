@@ -96,6 +96,7 @@ footer {
     border-radius: 5px; /* Optional, for some styling */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional, adds a subtle shadow */
 }
+
 .founders {
     text-align: center;
     padding: 2em;
@@ -119,6 +120,7 @@ footer {
 .founder p {
     margin-top: 0.5em;
 }
+
 
 .login-container {
     width: 100%;
@@ -262,6 +264,10 @@ input[type="password"] {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.blue-text {
+    color: blue;
+  }
 
 /* Additional styles for courses page */
 .courses-container {

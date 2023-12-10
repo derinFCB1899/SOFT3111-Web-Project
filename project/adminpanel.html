@@ -14,33 +14,38 @@
                 <div class="dropdown">
                     <button class="dropbtn" id="courseDropdown">Courses</button>
                     <div class="dropdown-content" id="coursesDropdownContent">
-                        <!-- Introductory is available to all users by default -->
                         <a href="introductorycoursepage.html" id="introductoryCourse">Introductory</a>
-                        <a href="advancedcoursepage.html" id="advancedcoursepage">Advanced</a>
-                        <!-- Advanced will be added via JavaScript for Sigma and Admin users -->
                     </div>
                 </div>
                 <a href="forum.html">Forums</a>
                 <a href="profilepage.html">Profile</a>
-                <!-- Additional links for Sigma and Admin will be added dynamically via JavaScript -->
                 <a href="homePage_preLogin.html" onclick="logout()">Logout</a>
             </nav>
-            <span id="userGreeting"></span> <!-- Place for the welcome message -->
+            <span id="userGreeting"></span>
         </div>
         <div class="hero">
             <h1>What is SigMale Academy?</h1>
         </div>
     </header>
     <div class="admin-panel">
-        <!-- Existing Content Section -->
-        <div class="existing-content">
-            <h2>Existing Content</h2>
-            <ul id="contentList">
-                <!-- Content will be added here -->
-            </ul>
-        </div>
-        
-        <!-- Add New Content Section -->
+<div class="existing-content">
+    <h2>Existing Content</h2>
+    <h3>Introductory Courses</h3>
+    <ul id="introductoryCoursesList">
+        <li>Foundations of Personal Leadership: Discovering Your Potential</li>
+        <li>Essentials of Time Management: Laying the Groundwork for Efficiency</li>
+        <li>Introduction to Emotional Intelligence: Understanding Yourself and Others</li>
+        <li>Basics of Effective Communication: Articulating with Clarity and Confidence</li>
+    </ul>
+    <h3>Advanced Courses</h3>
+    <ul id="advancedCoursesList">
+        <li>Advanced Leadership Strategies: Navigating Complexity and Change</li>
+        <li>Peak Productivity: Advanced Techniques for Time Mastery</li>
+        <li>Emotional Intelligence in Leadership: Developing a High-Performance Culture</li>
+        <li>Masterful Communication: Persuasion and Influence in the Digital Age</li>
+        <li>Strategic Success Planning: Crafting and Executing Visionary Goals</li>
+    </ul>
+</div>
         <div class="add-content">
             <h2>Add New Content</h2>
             <form id="newContentForm">
@@ -54,7 +59,7 @@
                 <input type="text" id="question" required>
                 
                 <div class="choices">
-                    <!-- Choices for the question -->
+
                 </div>
                 
                 <button type="button" id="addQuestionBtn">Add Question</button>
