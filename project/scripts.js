@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // User role-dependent navbar adjustments
-    var userRole = 'betauser'; // Replace with actual logic to determine user role
+    var userRole = 'adminuser'; // Replace with actual logic to determine user role
     var navbar = document.querySelector('.nav-bar nav');
     var coursesDropdownContent = document.getElementById('coursesDropdownContent');
     var userGreeting = document.getElementById('userGreeting');
@@ -194,4 +194,67 @@ document.addEventListener('DOMContentLoaded', function () {
          // Optionally, scroll the user to the top of the quiz section
          quizForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
      });
+
  });
+
+ document.addEventListener('DOMContentLoaded', function () {
+    //const userRole = 'adminuser'; // This should be set based on the actual user role
+    const forumContainer = document.querySelector('.forum-container');
+    const discussionTitle = document.querySelector('.discussion h3');
+
+    // Add lock/unlock functionality
+    const lockThreadButton = document.createElement('button');
+    lockThreadButton.textContent = '🔒 Lock Thread'; // Assume the thread is initially locked
+    lockThreadButton.addEventListener('click', function() {
+        if (lockThreadButton.textContent.includes('🔒')) {
+            lockThreadButton.textContent = '🔓 Unlock Thread';
+            alert('The thread has been unlocked.');
+        } else {
+            lockThreadButton.textContent = '🔒 Lock Thread';
+            alert('The thread has been locked.');
+        }
+    });
+    if (discussionTitle) {
+        discussionTitle.prepend(lockThreadButton);
+    }
+
+    // Add topic creation functionality for sigmauser
+    if (userRole === 'sigmauser' || userRole === 'adminuser') {
+        const addTopicButton = document.createElement('button');
+        addTopicButton.textContent = 'Add New Topic';
+        addTopicButton.addEventListener('click', function() {
+            alert('New topic creation functionality coming soon.'); // Placeholder for actual functionality
+        });
+        forumContainer.prepend(addTopicButton);
+    }
+
+    // Add delete functionality for adminuser
+    if (userRole === 'adminuser') {
+        document.querySelectorAll('.user-comment, .topics-list li').forEach(item => {
+            const deleteButton = document.createElement('span');
+            deleteButton.innerHTML = '⛔';
+            deleteButton.style.cursor = 'pointer';
+            deleteButton.addEventListener('click', function() {
+                if (confirm('Are you sure you want to delete this item?')) {
+                    item.remove();
+                    alert('The item has been deleted.');
+                }
+            });
+            item.prepend(deleteButton);
+        });
+    }
+
+    // Post reply functionality
+    const postButton = document.querySelector('.reply-box button');
+    if (postButton) {
+        postButton.addEventListener('click', function() {
+            const replyBox = document.querySelector('.reply-box input');
+            if (replyBox && replyBox.value.trim() !== '') {
+                alert('Your reply has been posted.');
+                replyBox.value = ''; // Clear the input field
+            } else {
+                alert('Please enter a reply.');
+            }
+        });
+    }
+});

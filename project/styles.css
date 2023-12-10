@@ -355,6 +355,12 @@ input[type="password"] {
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
+.question {
+    border: 1px solid #ccc; /* Add a 1px solid border with a light gray color */
+    padding: 10px; /* Add some padding for spacing */
+    margin-bottom: 20px; /* Add margin to separate questions */
+  }
+
 /* Overlay styles */
 .overlay {
     position: absolute;
@@ -535,4 +541,3 @@ input[type="password"] {
         flex-basis: 100%;
     }
 }
-
