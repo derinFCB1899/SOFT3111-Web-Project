@@ -96,11 +96,10 @@ footer {
     border-radius: 5px; /* Optional, for some styling */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional, adds a subtle shadow */
 }
-
 .founders {
     text-align: center;
     padding: 2em;
-    background-color: #f9f9f9; /* A light background for the section */
+    background-color: #f9f9f9; /* Açık arkaplan rengi */
 }
 
 .founder {
@@ -110,16 +109,16 @@ footer {
 }
 
 .founder img {
-    width: 200px; /* Or any size you prefer */
-    height: auto;
-    border: 3px solid #333; /* Optional: adds a border around the image */
+    width: 400px; /* İstediğiniz genişlik */
+    height: 450px; /* Resimlerin yüksekliği */
+    border: 3px solid #333; /* İsteğe bağlı: resmin etrafına çerçeve ekler */
     margin-bottom: 0.5em;
+    object-fit: cover; /* Resmi ölçülere uydurur, gerekiyorsa kırpar */
 }
 
 .founder p {
     margin-top: 0.5em;
 }
-
 
 .login-container {
     width: 100%;
